@@ -202,7 +202,7 @@ var organizations = [
 <!-- Feel free to add empty tags. Data shouldn't be here. -->
 	<center><h1>Organization Data</h1></center>
 	<div id="org_table">
-		<table id = "org_tablee">
+		<table id = "org_table1">
 		</table>
 	</div> 
 
@@ -214,30 +214,30 @@ console.log("test");
 	
 // Your JavaScript code goes here
 var x = "Organization Type";
-var i = 0;
-var non_profit_count = 0;
-var less_than_10 = 0;
-var current_year = (new Date()).getFullYear();
+var i=0;
+var non_profit_count=0;
+var less_than_10=0;
+var current_year=(new Date()).getFullYear();
 	
-var region = 0;
-var transportation = 0;
-var it_sector = 0;
+var region=0;
+var transportation=0;
+var it_sector=0;
 
-for (i=0; i<organizations.length;i++)
+for (i=0;i<organizations.length;i++)
 {
-	if(organizations[i]["Organization Type"] === "Nonprofit")
+	if(organizations[i]["Organization Type"]==="Nonprofit")
 	{
 		console.log(organizations[i]["Organization"]);
 		non_profit_count++;
 	}
 	if(organizations[i]["Founding Year"])
 	{
-		var t = current_year-parseInt(organizations[i]["Founding Year"])
+		var t= current_year-parseInt(organizations[i]["Founding Year"]);
 		if (t<10)
 		less_than_10++;
 	}
 	
-	if(organizations[i]["Region"] === "North America")
+	if(organizations[i]["Region"]==="North America")
 	{
 		region++;
 	}
@@ -260,7 +260,7 @@ for (i=0; i<organizations.length;i++)
 		it_sector++;
 	}
 }
-var table = document.getElementbyId('org_tablee');
+var table = document.getElementById('org_table1');
 var header = table.createTHead();
 var row = header.insertRow(0);
 var cell = row.insertCell(0);
