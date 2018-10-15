@@ -245,7 +245,7 @@ var organizations = [
          var tableRow4 = document.getElementById("table").rows[4].cells;
 
 
-         table[0].innerHTML = 'Count of Organizations: ';
+         table[0].innerHTML = 'Organizations: ';
          table[1].innerHTML = organizations.length;
 
          //document.getElementById("table").rows.item(1).innerHTML = ' Organizations';
@@ -265,7 +265,7 @@ var organizations = [
             }
             //console.log(youngerThanTen);
 
-            tableRow1[0].innerHTML = "Less Than 10 Years:";
+            tableRow1[0].innerHTML = "Less Than 10 Years: ";
             tableRow1[1].innerHTML = youngerThanTen.length;
             //Number three
 
@@ -273,7 +273,7 @@ var organizations = [
                nAmerica.push(orgKeys["Region"]);
             }
             //console.log(nAmerica.length);
-            tableRow2[0].innerHTML = "Count in North America:";
+            tableRow2[0].innerHTML = "North America: ";
             tableRow2[1].innerHTML = nAmerica.length;
 		 
             // Question Four
@@ -281,7 +281,7 @@ var organizations = [
                dataTransCount.push(orgKeys["Type of Data Used"]);
             }
             //console.log(dataTransCount)
-            tableRow3[0].innerHTML = "Count using Transportation Data:";
+            tableRow3[0].innerHTML = "Transportation: ";
             tableRow3[1].innerHTML = dataTransCount.length;
 
             // Question Five		
@@ -291,7 +291,7 @@ var organizations = [
 
             //console.log(orgType.length)
 
-            tableRow4[0].innerHTML = "Count of Profit Organization Type:";
+            tableRow4[0].innerHTML = "Profit Organization Type: ";
             tableRow4[1].innerHTML = orgType.length;
 
          }
@@ -310,11 +310,11 @@ var organizations = [
               
               }
               
-              row[0].innerHtml = "Nonprofit Organizations:";
+              row[0].innerHtml = "Nonprofit Organizations: ";
               row[1].innerHtml = nonproOrgs.length;
               
               if (orgKeys["Founding Year"] > 2008) {
-     							lessThanTen.push(orgKeys["Founding Year"])
+     		lessThanTen.push(orgKeys["Founding Year"])
               }
             }
 
