@@ -232,7 +232,7 @@ for (i=0; i<organizations.length;i++)
 	}
 	if(organizations[i]["Founding Year"])
 	{
-		var t = current_year-parseInt(organizations[i]["Founding Year"]
+		var t = current_year-parseInt(organizations[i]["Founding Year"])
 		if (t<10)
 		less_than_10++;
 	}
@@ -282,7 +282,7 @@ var label2 = row2.insertCell(0);
 var data2 = row2.insertCell(1);
 	
 label2.innerHTML = "Less than 10 years";
-data2.innerHTML = less_than_10
+data2.innerHTML = less_than_10;
 	
 var row3 = table.insertRow(3);
 var label3 = row3.insertCell(0);
