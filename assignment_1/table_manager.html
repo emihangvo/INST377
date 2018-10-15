@@ -199,113 +199,137 @@ var organizations = [
 </head>
 
 <body>
-<!-- Feel free to add empty tags. Data shouldn't be here. -->
-	<center><h1>Organization Data</h1></center>
-	<div id="org_table">
-		<table id = "org_table1">
-		</table>
-	</div> 
+      <!-- Feel free to add empty tags. Data shouldn't be here. -->
+	   <center><h1>Organization Table</h1></center>
+      <div id="org_table">
+         <table id="table">
+            <tr>
+               <td></td>
+               <td></td>
+            </tr>
 
-<script>
-// outputs the first item of the organizations array. Just for testing.
-// console.log(organizations[0]); 
+            <tr>
+               <td></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td></td>
+               <td></td>
+            </tr>
+         </table>
+      </div>
 
-console.log("test");
-	
-// Your JavaScript code goes here
-var x = "Organization Type";
-var i=0;
-var non_profit_count=0;
-var less_than_10=0;
-var current_year=(new Date()).getFullYear();
-	
-var region=0;
-var transportation=0;
-var it_sector=0;
+      <script>
+         // Your JavaScript code goes here
+         // outputs the first item of the organizations array. Just for testing.
+         //console.log(organizations[0]);
+         //document.getElementById("org_table").innerHTML = JSON.stringify(organizations[0])
+         // Question One
+         var table = document.getElementById("table").rows[0].cells;
+         var tableRow1 = document.getElementById("table").rows[1].cells;
+         var tableRow2 = document.getElementById("table").rows[2].cells;
+         var tableRow3 = document.getElementById("table").rows[3].cells;
+         var tableRow4 = document.getElementById("table").rows[4].cells;
 
-for (i=0;i<organizations.length;i++)
-{
-	if(organizations[i]["Organization Type"]==="Nonprofit")
-	{
-		console.log(organizations[i]["Organization"]);
-		non_profit_count++;
-	}
-	if(organizations[i]["Founding Year"])
-	{
-		var t= current_year-parseInt(organizations[i]["Founding Year"]);
-		if (t<10)
-		less_than_10++;
-	}
-	
-	if(organizations[i]["Region"]==="North America")
-	{
-		region++;
-	}
-	
-	if(organizations[i]["Types of Data Used"])
-	{
-		var t2 = organizations[i]["Type of Data Used"];
-		var n = t2.indexOf("Transportation");
-		
-		if (n! == -1)
-		transportation++;
-	}
-	
-	if(organizations[i]["Sectors"])
-	{
-		var t3 = organizations[i]["Sectors"];
-		var n = t3.indexOf("IT");
-		
-		if (n! == -1)
-		it_sector++;
-	}
-}
-var table = document.getElementById('org_table1');
-var header = table.createTHead();
-var row = header.insertRow(0);
-var cell = row.insertCell(0);
 
-cell.innerHTML = "<b>Parameters</b>";
+         table[0].innerHTML = 'Count of Organizations: ';
+         table[1].innerHTML = organizations.length;
 
-var cell2 = row.insertCell(1);
-cell2.innerHTML = "<b>Data</b>";
-	
-var row1 = table.insertRow(1);
-var non_profit = row1.insertCell(0);
-var data_non_profit = row1.insertCell(1);
-	
-non_profit.innerHTML = "Non Profit Organizations";
-data_non_profit.innerHTML = non_profit_count;
-	
-var row2 = table.insertRow(2);
-var label2 = row2.insertCell(0);
-var data2 = row2.insertCell(1);
-	
-label2.innerHTML = "Less than 10 years";
-data2.innerHTML = less_than_10;
-	
-var row3 = table.insertRow(3);
-var label3 = row3.insertCell(0);
-var data3 = row3.insertCell(1);
-	
-label3.innerHTML = "North America";
-data3.innerHTML = region;
-	
-var row4 = table.insertRow(4);
-var label4 = row4.insertCell(0);
-var data4 = row4.insertCell(1);
-	
-label4.innerHTML = "Transportation";
-data4.innerHTML = transportation;
-	
-var row5 = table.insertRow(5);
-var label5 = row5.insertCell(0);
-var data5 = row5.insertCell(1);
-	
-label5.innerHTML = "IT Sector";
-data5.innerHTML = it_sector;
+         //document.getElementById("table").rows.item(1).innerHTML = ' Organizations';
+         // Question Two
+         var youngerThanTen = [];
+         var nAmerica = [];
+         var dataTransCount = [];
+         var orgType = [];
+         //such great variable names right? lol
+
+
+         for (var key of Object.keys(organizations)) {
+            var orgKeys = organizations[key];
+
+            if (orgKeys["Founding Year"] > 2008) {
+               youngerThanTen.push(orgKeys["Founding Year"]);
+            }
+            //console.log(youngerThanTen);
+
+            tableRow1[0].innerHTML = "Count of Founded before 08:";
+            tableRow1[1].innerHTML = youngerThanTen.length;
+            //Number three
+
+            if (orgKeys["Region"] == "North America") {
+               nAmerica.push(orgKeys["Region"]);
+            }
+            //console.log(nAmerica.length);
+            tableRow2[0].innerHTML = "Count in North America:";
+            tableRow2[1].innerHTML = nAmerica.length;
+		 
+            // Question Four
+            if (orgKeys["Type of Data Used"] == "Transportation") {
+               dataTransCount.push(orgKeys["Type of Data Used"]);
+            }
+            //console.log(dataTransCount)
+            tableRow3[0].innerHTML = "Count using Transportation Data:";
+            tableRow3[1].innerHTML = dataTransCount.length;
+
+            // Question Five		
+            if (orgKeys["Organization Type"] == "For-profit") {
+               orgType.push(orgKeys["Organization Type"]);
+            }
+
+            //console.log(orgType.length)
+
+            tableRow4[0].innerHTML = "Count of Profit Organization Type:";
+            tableRow4[1].innerHTML = orgType.length;
+
+         }
+         	var nonproOrgs = [];
+            var lessThanTen = [];
+            var northAmerican = [];
+            var transportData = [];
+            
+            var highIncome = [];
+            
+            for (var key of object.keys(organizations)) {
+            	var orgKeys = organizations[key];
+              
+              
+              if  (orgKeys["Organization Type"] == "Nonprofit") {
+              
+              }
+              
+              row[0].innerHtml = "Nonprofit Organizations:";
+              row[1].innerHtml = nonproOrgs.length;
+              
+              if (orgKeys["Founding Year"] > 2008) {
+     							lessThanTen.push(orgKeys["Founding Year"])
+              }
+            }
+
+
+         /*
+
+         var profit = document.getElementById("profit")
+                     var nonProfit = document.getElementById("Nonprofit")
+                     var other = document.getElementById("other")
+         				function update(){
+         				if (profit.checked) {
+                           var orgChecked = 'For-profit';
+                        } else if (nonProfit.checked) {
+                           var orgChecked = 'Nonprofit';
+                        } else if (other.checked) {
+                           var orgChecked = 'Other';
+                        }}
+         */
 
 </script>
-
 </body>
+
 </html>
