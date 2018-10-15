@@ -5,6 +5,11 @@
 	div {
 		margin-bottom: 20px;
 	}
+	table,
+         td {
+            border: 2px solid pink;
+            border-radius: .25em
+         }
 </style>
 
 <!-- Data -->
@@ -200,7 +205,7 @@ var organizations = [
 
 <body>
       <!-- Feel free to add empty tags. Data shouldn't be here. -->
-	   <center><h1>Organization Table</h1></center>
+	   <center><h1>Organization Table</h1>
       <div id="org_table">
          <table id="table">
             <tr>
@@ -260,7 +265,7 @@ var organizations = [
             }
             //console.log(youngerThanTen);
 
-            tableRow1[0].innerHTML = "Count of Founded before 08:";
+            tableRow1[0].innerHTML = "Less Than 10 Years:";
             tableRow1[1].innerHTML = youngerThanTen.length;
             //Number three
 
